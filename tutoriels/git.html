@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="../style.css">
+<title>git</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="git"><h1 id="git" class="header"><a href="#git">git</a></h1></div>
+
+<div id="git-Démarrer un dépôt Git"><h2 id="Démarrer un dépôt Git" class="header"><a href="#git-Démarrer un dépôt Git">Démarrer un dépôt Git</a></h2></div>
+
+<p>
+Deux façons existent :
+</p>
+
+<ol>
+<li>
+Transformer un répertoire existant et le transformer en dépôt Git.
+
+<li>
+Cloner un dépot Git existant.
+
+</ol>
+
+<div id="git-Démarrer un dépôt Git-Dans un répertoire existant"><h3 id="Dans un répertoire existant" class="header"><a href="#git-Démarrer un dépôt Git-Dans un répertoire existant">Dans un répertoire existant</a></h3></div>
+
+<p>
+Votre répertoire existe et peut-être contient même des fichiers. Crée et rentre dans
+ton répertoire et initialise un dépôt :
+</p>
+<blockquote>
+mkdir /home/user/my_project
+</blockquote>
+<blockquote>
+cd /home/user/my_project
+</blockquote>
+<blockquote>
+git init
+</blockquote>
+    
+<p>
+Ton dépôt Git est créé.
+</p>
+
+<p>
+Ton répertoire est vide. Crée un fichier à l'intérieur :
+</p>
+<blockquote>
+touch /home/user/my_project/README.md
+</blockquote>
+
+<p>
+Le fichier est vide. Tu es dans /home/user/my_project. Ajoute du texte et
+affiche le contenu :
+</p>
+<blockquote>
+echo "Mon premier dépôt git." &gt; README.md
+</blockquote>
+<blockquote>
+cat README.md
+</blockquote>
+    
+<p>
+Pour connaître l'état de ton dépôt, fais :
+</p>
+<blockquote>
+git status
+</blockquote>
+    
+<p>
+Tu obtiens le message suivant :
+</p>
+
+<pre>
+
+Sur la branche main  
+
+Aucun commit  
+
+Fichiers non suivis:  
+
+(utilisez "git add &lt;fichier&gt;..." pour inclure dans ce qui sera validé)    
+README.md  
+
+aucune modification ajoutée à la validation mais des fichiers non suivis    
+sont présents (utilisez "git add" pour les suivre)  
+
+</pre>
+
+<p>
+Le fichier que tu viens de créer est non suivi. Pour garder une trace des
+modifications de ce fichier, il faut le faire suivre par Git. L'ajouter à ton
+répertoire ne suffit pas. Pour faire suivre README.md :
+</p>
+<blockquote>
+git add README.md
+</blockquote>
+    
+<p>
+Affiche le statut de ton dépôt :
+</p>
+<blockquote>
+git status
+</blockquote>
+    
+<p>
+Tu obtiens le message suivant :
+</p>
+
+<pre>
+
+Sur la branche main
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached &lt;fichier&gt;..." pour désindexer)
+	nouveau fichier : README.md
+
+</pre>
+
+<p>
+Git a pris un instantané de ton dépôt. La prochaine fois que tu valideras le
+dépôt, Git se souviendra du fichier README.md tel qu'il était quand tu l'as
+ajouté. On dit que le fichier est suivi et indexé. Ces deux mots sont
+importants pour la suite.
+</p>
+
+<p>
+On recommence avec un autre fichier. Toujours dans le répertoire de notre
+projet, on lance la commande :
+</p>
+<blockquote>
+touch CONTRIBUTING.md
+</blockquote>
+    
+<p>
+Si on fait :
+</p>
+<blockquote>
+ls
+</blockquote>
+    
+<p>
+pour afficher la liste des fichiers présents, on a bien nos deux fichiers :
+</p>
+<blockquote>
+CONTRIBUTING.md  README.md
+</blockquote>
+
+<p>
+Vérifions l'état du dépôt :
+</p>
+<blockquote>
+git status
+</blockquote>
+    
+<p>
+On obtient le message suivant :
+</p>
+
+<pre>
+
+Sur la branche main
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached &lt;fichier&gt;..." pour désindexer)
+	nouveau fichier : README.md
+
+Fichiers non suivis:
+  (utilisez "git add &lt;fichier&gt;..." pour inclure dans ce qui sera validé)
+	CONTRIBUTING.md
+
+</pre>
+
+<p>
+Le résultat ne devrait pas te surprendre. Le fichier README.md est suivi et
+indexé, il apparaît donc toujours dans les fichiers sous
+</p>
+
+<pre>
+
+Modifications qui seront validées :
+
+</pre>
+
+<p>
+Tandis que le fichier CONTRIBUTING.md est non suivi, puisqu'on a toujours pas
+spécifié ) Git de le suivre. Comment ferais-tu ?
+</p>
+
+<p>
+Avec la commande suivante :
+</p>
+<blockquote>
+git add CONTRIBUTING.md
+</blockquote>
+    
+<p>
+Revérifions maintenant l'état du dépôt :
+</p>
+<blockquote>
+git status
+</blockquote>
+    
+<p>
+On obtient ceci :
+</p>
+
+<pre>
+
+Sur la branche main
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached &lt;fichier&gt;..." pour désindexer)
+	nouveau fichier : CONTRIBUTING.md
+	nouveau fichier : README.md
+
+</pre>
+
+<p>
+Les deux fichiers, CONTRIBUTING.md et README.md, sont suivis, ils apparaissent
+dans la même catégorie.
+</p>
+
+<p>
+Ecris quelque chose dans le fichier CONTRIBUTING.md :
+</p>
+<blockquote>
+echo "# Comment contribuer ?" &gt; CONTRIBUTING.md
+</blockquote>
+    
+<p>
+Vérifions la modification :
+</p>
+<blockquote>
+cat CONTRIBUTING.md
+</blockquote>
+    
+<pre>
+
+# Comment contribuer ?
+
+</pre>
+    
+<p>
+Le fichier est maintenant modifié. Vérifions l'état du dépôt :
+</p>
+<blockquote>
+git status
+</blockquote>
+
+<p>
+Prenons le temps de lire le message obtenu :
+</p>
+
+<pre>
+
+Sur la branche main
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached &lt;fichier&gt;..." pour désindexer)
+	nouveau fichier : CONTRIBUTING.md
+	nouveau fichier : README.md
+
+Modifications qui ne seront pas validées :
+  (utilisez "git add &lt;fichier&gt;..." pour mettre à jour ce qui sera validé)
+  (utilisez "git restore &lt;fichier&gt;..." pour annuler les modifications dans le
+  répertoire de travail)
+	modifié :         CONTRIBUTING.md
+
+</pre>
+
+<p>
+Les modifications qui seront validées, autrement dit, les modifications de
+dépôt qui seront validées, sont les suivantes :
+</p>
+
+<pre>
+
+	nouveau fichier : CONTRIBUTING.md
+	nouveau fichier : README.md
+
+</pre>
+
+<p>
+Il est bien indiqué <span id="git-Démarrer un dépôt Git-Dans un répertoire existant-nouveau fichier"></span><strong id="nouveau fichier">nouveau fichier</strong>. Autrement dit, c'est le fait d'avoir
+créé des nouveaux fichiers que Git a retenu, puisque tu les a ajoutés après les
+avoir créés.
+</p>
+
+<p>
+Or, tu as ensuite modifié le fichier CONTRIBUTING.md. Git te l'indique de la
+façon suivante :
+</p>
+
+<pre>
+
+	modifié :         CONTRIBUTING.md
+    
+</pre>
+
+<p>
+dans les modifications qui ne seront pas validées. Dans ce cas, si tu veux que
+Git garde une trace de tes modifications, qu'il sauvegarde l'état de ton dépôt
+tel qu'il est maintenant, tu dois indexer à nouveau CONTRIBUTING.md. Il est
+suivi, mais pas indexé. Git sait qu'il existe, il ne sait pas encore que tu
+l'as modifié. Pour cela, on utilise à nouveau cette commande :
+</p>
+<blockquote>
+git add CONTRIBUTING.md
+</blockquote>
+    
+<p>
+Revérifie l'état du dépôt :
+</p>
+<blockquote>
+git status
+</blockquote>
+    
+<p>
+Tu obtiens :
+</p>
+
+<pre>
+
+Sur la branche main
+
+Aucun commit
+
+Modifications qui seront validées :
+  (utilisez "git rm --cached &lt;fichier&gt;..." pour désindexer)
+	nouveau fichier : CONTRIBUTING.md
+	nouveau fichier : README.md
+
+</pre>
+
+    
+
+
+<div id="git-Démarrer un dépôt Git-Cloner un dépôt existant"><h3 id="Cloner un dépôt existant" class="header"><a href="#git-Démarrer un dépôt Git-Cloner un dépôt existant">Cloner un dépôt existant</a></h3></div>
+
+<p>
+Le dépôt étant sûrement sur un serveur différent, il te faut l'adresse de ce
+dépôt pour pouvoir le cloner.
+</p>
+
+<p>
+Github sert à héberger des dépôts git. D'autres sites web offrent ce service :
+Sourcehut, Gitlab...
+</p>
+
+<p>
+La bibliothèque pour Git s'appelle libgit2. Elle est hébergée sur Github. Son
+adresse est :
+</p>
+<blockquote>
+<a href="https://github.com/libgit2/libgit2">https://github.com/libgit2/libgit2</a>
+</blockquote>
+    
+<p>
+La commande pour cloner un dépôt est : 
+</p>
+<blockquote>
+git clone
+</blockquote>
+    
+<p>
+Pour cloner le dépôt libgit2, entre la commande :
+</p>
+<blockquote>
+git clone <a href="https://github.com/libgit2/libgit2">https://github.com/libgit2/libgit2</a>
+</blockquote>
+    
+<p>
+Un répertoire contenant le dépôt sera créé là où tu te trouves au moment où tu
+lance cette commande.
+</p>
+
+<p>
+Si jamais tu voulais changer le nom du répertoire où cloner ce dépôt, tu
+pourrais faire :
+</p>
+<blockquote>
+git clone <a href="https://github.com/libgit2/libgit2">https://github.com/libgit2/libgit2</a> my_libgit2
+</blockquote>
+
+</body>
+</html>

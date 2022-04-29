@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="../style.css">
+<title>tutorials</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="tutorials"><h1 id="tutorials" class="header"><a href="#tutorials">tutorials</a></h1></div>
+
+<p>
+<span id="tutorials-computer"></span><span class="tag" id="computer">computer</span> <span id="tutorials-tutorials"></span><span class="tag" id="tutorials">tutorials</span>
+</p>
+
+<div id="tutorials-Tutoriels longs"><h2 id="Tutoriels longs" class="header"><a href="#tutorials-Tutoriels longs">Tutoriels longs</a></h2></div>
+
+<p>
+<a href="tutoriels/git.html">git</a>
+</p>
+
+<div id="tutorials-How to create a simple web server with python ?"><h2 id="How to create a simple web server with python ?" class="header"><a href="#tutorials-How to create a simple web server with python ?">How to create a simple web server with python ?</a></h2></div>
+
+<p>
+To start the server in your current directory.
+</p>
+
+<p>
+In command line :
+</p>
+
+<p>
+<code>python -m http.server</code>
+</p>
+
+<div id="tutorials-How to create a video from a music album and its cover"><h2 id="How to create a video from a music album and its cover" class="header"><a href="#tutorials-How to create a video from a music album and its cover">How to create a video from a music album and its cover</a></h2></div>
+
+<p>
+Requirements : 
+</p>
+<ul>
+<li>
+imagemagick
+
+<li>
+sox
+
+<li>
+ffmpeg
+
+</ul>
+
+<p>
+Concatenate audio files :
+</p>
+
+<p>
+<code>sox track1.ogg track2.ogg track3.ogg full_album.ogg</code>
+</p>
+
+<p>
+Resize cover image if needed :
+</p>
+
+<p>
+<code>convert cover.jpg -resize 720x720 small_cover.jpg</code>
+</p>
+
+<p>
+Merge audio and image into a video file :
+</p>
+
+<p>
+<code>ffmpeg -i small_cover.jpg -i full_album.ogg output.mp4</code>
+</p>
+
+<div id="tutorials-How to find a string into multiple files ?"><h2 id="How to find a string into multiple files ?" class="header"><a href="#tutorials-How to find a string into multiple files ?">How to find a string into multiple files ?</a></h2></div>
+
+<p>
+<code>grep -r string ./*</code>
+</p>
+
+<p>
+<em>-r</em> to search recursively into current directory (./*).
+</p>
+
+<hr />
+<p>
+<a href="./">computer</a>
+</p>
+
+</body>
+</html>
