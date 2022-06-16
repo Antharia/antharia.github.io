@@ -39,7 +39,11 @@ ul {
 
 dt { font-weight: bold; }
 
-img { border: none; }
+img { 
+border: none;
+max-width: 800px;
+}
+
 
 pre {
   border-left: 5px solid #dcdcdc;
