@@ -3,10 +3,25 @@
 body {
     font-family: Roboto, sans;
     margin: 2em;
-    max-width: 800px;
     background-color: #121212;
     color: #FDFDEF;
 }
+
+nav {
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
+    gap: 2em;
+    padding: 1em;
+    top: 0;
+    background-color: #121212;
+}
+
+nav > a {
+    border-bottom: 1px solid #FDFDEF;
+    padding-bottom: 3px;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
@@ -20,7 +35,7 @@ h1 {
 
 h2 {
     margin-top: 2em;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 h3 {
@@ -29,7 +44,8 @@ h3 {
 }
 
 p {
-    margin-left: 1em;
+    margin-left: 2em;
+    max-width: 800px;
 }
 
 a {
@@ -37,13 +53,14 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: #F01212;
+}
+
 p > a {
     text-decoration: underline;
 }
 
-p > a:hover {
-    color: #F01212;
-}
 
 li {
     list-style-type: circle;
