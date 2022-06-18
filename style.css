@@ -57,17 +57,13 @@ a:hover {
     color: #F01212;
 }
 
-p > a {
+li > a, p > a {
     text-decoration: underline;
 }
 
 
 li {
     list-style-type: circle;
-}
-
-li > a:hover {
-    color: #F01212;
 }
 
 img {
@@ -85,7 +81,7 @@ blockquote {
 }
 
 .tag {
-    color: #808080;
+    color: #A0A0A0;
     font-family: monospace;
 }
 
