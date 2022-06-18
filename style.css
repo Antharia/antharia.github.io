@@ -35,12 +35,12 @@ h1 {
 
 h2 {
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 h3 {
-    margin-top: 2em;
-    margin-bottom: 1em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 p {
@@ -94,4 +94,9 @@ code {
     padding: 0.4em 0.8em 0.4em 0.8em;
     background-color: #242424;
     color: #FDFDEF;
+}
+
+footer {
+    height: 2em;
+    bottom: 0;
 }
