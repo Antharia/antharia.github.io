@@ -8,10 +8,15 @@
 </head>
 <body>
     <nav>
+        <div class="logo">
+            <a href="https://antharia.github.io"><img src="assets/avatar.png" id="avatar"></a>
+        </div>
+        <div class="nav-links">
             <a href="https://antharia.github.io/projects.html" class="nav-item">Projects</a>
             <a href="https://antharia.github.io/wiki.html" class="nav-item">Wiki</a>
             <a href="https://antharia.github.io/diary/diary.html" class="nav-item">Blog</a>
             <a href="https://antharia.github.io/about.html" class="nav-item">About</a>
+        </div>
     </nav>
     <div class="container">
         
@@ -44,6 +49,16 @@ maximum d'attention dont tu as besoin pour lire les tutos suivants.
 Please PR if you find a mistake.
 </p>
 
+<div id="tutoriels-How to recursively delete all files of a specific extension in a directory ?"><h2 id="How to recursively delete all files of a specific extension in a directory ?" class="header"><a href="#tutoriels-How to recursively delete all files of a specific extension in a directory ?">How to recursively delete all files of a specific extension in a directory ?</a></h2></div>
+
+<p>
+Use it with caution :
+</p>
+
+<p>
+<code>find . -name "*.bak" -type f -delete</code>
+</p>
+
 <div id="tutoriels-How to git from another directory ?"><h2 id="How to git from another directory ?" class="header"><a href="#tutoriels-How to git from another directory ?">How to git from another directory ?</a></h2></div>
 
 <p>
@@ -64,7 +79,7 @@ For example with push :
 </p>
 
 <p>
-`git -c /your/repo/dir push -v
+<code>git -c /your/repo/dir push -v</code>
 </p>
 
 <p>
@@ -345,7 +360,10 @@ Merge audio and image into a video file :
 
     </div>
     <footer>
-        <h2>Antharia Jack</h2>
+        <h2><a href="https://antharia.github.io">Antharia Jack</a></h2>
+        <div class="footer-links">
+            <a href="https://twitter.com/antharia_jack">twitter</a>
+        </div>
     </footer>
 </body>
 </html>
