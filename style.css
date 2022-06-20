@@ -17,6 +17,10 @@ nav {
     background-color: #121212;
 }
 
+nav > img {
+    max-height: 30px;
+}
+
 nav > a {
     border-bottom: 1px solid #FDFDEF;
     padding-bottom: 3px;
