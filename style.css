@@ -74,7 +74,18 @@ a {
 }
 
 a:hover {
-    color: #F01212;
+           /*ffd166 06d6a0 118ab2 */
+
+    background-color: #FFD166;
+    background-image: linear-gradient(45deg, #D62828, #F77F00);
+    background-size: 100%;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+
 }
 
 li > a, p > a {

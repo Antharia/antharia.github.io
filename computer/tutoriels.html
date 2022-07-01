@@ -9,7 +9,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="https://antharia.github.io"><img src="assets/avatar.png" id="avatar"></a>
+            <a href="https://antharia.github.io"><img src="https://antharia.github.io/assets/avatar.png" id="avatar"></a>
         </div>
         <div class="nav-links">
             <a href="https://antharia.github.io/projects.html" class="nav-item">Projects</a>
@@ -24,13 +24,14 @@
 
 <div id="tutoriels-Guides"><h2 id="Guides" class="header"><a href="#tutoriels-Guides">Guides</a></h2></div>
 
-<p>
-<a href="tutoriels/git.html">git</a>
-<a href="code smells.html">code smells</a>
+<ul>
+<li>
 <a href="tutoriels/pip.html">pip</a>
-<a href="web hacking.html">web hacking</a>
-</p>
 
+<li>
+<a href="web hacking.html">web hacking</a>
+
+</ul>
 
 <div id="tutoriels-30 secondes"><h2 id="30 secondes" class="header"><a href="#tutoriels-30 secondes">30 secondes</a></h2></div>
 
@@ -47,6 +48,48 @@ maximum d'attention dont tu as besoin pour lire les tutos suivants.
 
 <p>
 Please PR if you find a mistake.
+</p>
+
+<div id="tutoriels-How to install postgresql on Arch Linux ?"><h2 id="How to install postgresql on Arch Linux ?" class="header"><a href="#tutoriels-How to install postgresql on Arch Linux ?">How to install postgresql on Arch Linux ?</a></h2></div>
+
+<p>
+Install the <span id="tutoriels-How to install postgresql on Arch Linux ?-postgresql"></span><strong id="postgresql">postgresql</strong> package.
+</p>
+
+<p>
+<code>sudo pacman -S postgresql</code>
+</p>
+
+<p>
+Switch to <em>postgres</em> user.
+</p>
+
+<p>
+<code>sudo -iu postgres</code>
+</p>
+
+<p>
+Initialize the database cluster.
+</p>
+
+<p>
+<code>[postgres]$ initdb -D /var/lib/postgres/data</code>
+</p>
+
+<p>
+Start the postgresql.service.
+</p>
+
+<p>
+<code>systemctl start postgresql</code>
+</p>
+
+<p>
+Or enable it if you want postgresql launches at startup.
+</p>
+
+<p>
+<code>systemctl enable postgresql</code>
 </p>
 
 <div id="tutoriels-How to recursively delete all files of a specific extension in a directory ?"><h2 id="How to recursively delete all files of a specific extension in a directory ?" class="header"><a href="#tutoriels-How to recursively delete all files of a specific extension in a directory ?">How to recursively delete all files of a specific extension in a directory ?</a></h2></div>
